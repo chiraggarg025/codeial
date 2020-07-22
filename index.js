@@ -6,6 +6,9 @@ const expressLayout = require('express-ejs-layouts');
 // set view engine
 app.set('view engine','ejs');
 app.set('views','./views');
+// extract style and scripts from subpages to layout
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 //Use router
 app.use(express.static('./assets'));
 app.use(expressLayout);
