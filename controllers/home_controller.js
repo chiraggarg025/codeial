@@ -1,3 +1,5 @@
+const { model } = require("mongoose");
+
 // controller to return home  page
 module.exports.home = function(req,res){
     console.log(req.cookies);
