@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title%></title>
     <link rel="stylesheet" href="/css/layout.css">
+    <!-- rendering the css of other ejs files -->
     <%- style %>
 </head>
 <body>
+    <!-- redering the headers -->
     <%-include('_header') %>
     
     <%- body %>
 
     <%- include('_footer') %>
+
+    <!-- redering the scripts of other ejs files -->
     <%- script %>
 </body>
 </html>
