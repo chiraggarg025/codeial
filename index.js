@@ -1,4 +1,5 @@
 const express =require('express');
+const cookieParser = require('cookie-parser');
 // use express
 const app = express();
 const port = 8000;
@@ -11,9 +12,13 @@ app.set('views','./views');
 // extract style and scripts from subpages to layout
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
-//Use router
+app.use(cookieParser());
+app.use(express.urlencoded());
+// setting view for static files
 app.use(express.static('./assets'));
+// setting up layout
 app.use(expressLayout);
+// setting up router
 app.use('/',require('./routes'));
 
 // listen to port
