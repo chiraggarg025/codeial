@@ -83,3 +83,11 @@ module.exports.createSession = function(req,res){
     })
 }
 // sign out user
+module.exports.signOut=function(req,res){
+    if(req.cookies.user_id){
+        res.clearCookie("user_id");
+        return res.redirect('/users/sign-in');
+    }else{
+        return res.redirect('back');
+    }
+}
